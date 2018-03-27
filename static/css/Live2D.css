@@ -2,6 +2,7 @@
 	position: fixed;
 	bottom: 0px;
 	right: 0px;
+	z-index: 999999;
 }
 .animated{
 	-webkit-animation-duration:1s;
