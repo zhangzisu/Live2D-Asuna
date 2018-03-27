@@ -26,6 +26,7 @@ function loadModel() {
   live2DHelper = new Live2DHelper({canvas: 'glcanvas'});
   var arr = ["01", "02", "03", "06", "12", "29"];
   arr = shuffle(arr);
+  console.info("Model : " + arr[0]);
   var path = "/static/live2d/asuna/asuna_" + arr[0] + "/asuna_" + arr[0] + ".model.json";
   live2DHelper.loadModel(path, function(){
     live2DHelper.startMotion("", "0");
