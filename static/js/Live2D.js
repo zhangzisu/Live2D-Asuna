@@ -14,8 +14,8 @@ function initLive2D() {
 	if ($(window).width() < 1150) {
 		return;
 	}
-	$.getScript("/static/js/live2d.min.js").done(function () {
-		$.getScript("/static/js/live2d-helper.min.js").done(function () {
+	$.getScript("https://zhangzisu.cn/static/js/live2d.min.js").done(function () {
+		$.getScript("https://zhangzisu.cn/static/js/live2d-helper.min.js").done(function () {
 			loadModel();
 		});
 	});
@@ -26,7 +26,7 @@ function loadModel() {
 	var arr = ["01", "02", "03", "06", "12", "29"];
 	arr = shuffle(arr);
 	console.info("Model : " + arr[0]);
-	var path = "/static/live2d/asuna/asuna_" + arr[0] + "/asuna_" + arr[0] + ".model.json";
+	var path = "https://zhangzisu.cn/static/live2d/asuna/asuna_" + arr[0] + "/asuna_" + arr[0] + ".model.json";
 	live2DHelper.loadModel(path, function () {
 		live2DHelper.startMotion("", "0");
 		live2DHelper.startTurnHead();
@@ -57,33 +57,6 @@ function followMouse() {
 			if (live2DHelper != null) {
 				live2DHelper.followPointer(e);
 				//console.log("---"  + e.pageX + "   " + e.pageY)
-			}
-		});
-	// click
-	// $(".wrapper").click(function(e){
-	//   if(live2DHelper != null) {
-	//     live2DHelper.followPointer(e);
-	//   }
-	// });
-}
-
-function seeMenu() {
-	var $canvas = $("#glcanvas");
-	var a = $canvas.width();
-	var b = $canvas.height();
-	var c = $(window).width();
-	var d = $(window).height();
-	console.log(a + " " + c + " " + b + " " + d)
-	$("a[data-pjax]").mousemove(function (e) {
-		if (live2DHelper != null) {
-			//live2DHelper.followPointer(e);
-			// live2DHelper.viewPointer(parseInt(e.pageX * a / c), parseInt(e.pageY * b / d));
-			// console.log(parseInt(e.pageX * a / c)+ "   " + parseInt(e.pageY * b / d))
-		}
-	})
-		.mouseout(function (e) {
-			if (live2DHelper != null) {
-				live2DHelper.viewPointer(0, 0);
 			}
 		});
 }
