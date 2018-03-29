@@ -11,9 +11,6 @@ function initLive2D() {
 	if ($("#glcanvas").length == 0) {
 		return;
 	}
-	if ($(window).width() < 1150) {
-		return;
-	}
 	$.getScript("https://zhangzisu.cn/static/js/live2d.min.js").done(function () {
 		$.getScript("https://zhangzisu.cn/static/js/live2d-helper.min.js").done(function () {
 			loadModel();
