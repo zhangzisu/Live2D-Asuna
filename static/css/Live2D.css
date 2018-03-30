@@ -3,6 +3,7 @@
 	bottom: 0px;
 	right: 0px;
 	z-index: 999999;
+	pointer-events: none;
 }
 .animated{
 	-webkit-animation-duration:1s;
