@@ -1,22 +1,22 @@
 var live2DHelper;
 /**
- * --------------------------------------------------
- *                     live2d
- * --------------------------------------------------
+ * InitLive2D
+ * @param {String} modelName 
  */
-function initLive2D() {
+function initLive2D(modelName) {
 	if ($("#glcanvas").length == 0) {
 		return;
 	}
-	loadModel();
+	loadModel(modelName);
 }
-
-function loadModel() {
+/**
+ * loadModel
+ * @param {String} modelName 
+ */
+function loadModel(modelName) {
 	live2DHelper = new Live2DHelper({ canvas: 'glcanvas' });
-	var arr = ["01", "02", "03", "06", "12", "29"];
-	arr = shuffle(arr);
-	console.info("Model : " + arr[0]);
-	var path = "https://zhangzisu.cn/static/live2d/asuna/asuna_" + arr[0] + "/asuna_" + arr[0] + ".model.json";
+	console.info("Model : " + modelName);
+	var path = `https://zhangzisu.cn/static/live2d/asuna/asuna_${modelName}/asuna_${modelName}.model.json`;
 	live2DHelper.loadModel(path, function () {
 		live2DHelper.startMotion("", "0");
 		live2DHelper.startTurnHead();
